@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://xisx6l6mek8w"]
+
+[ext_resource type="Script" uid="uid://dm47qrm05d4b7" path="res://mainMenu.gd" id="1_0uin0"]
+[ext_resource type="Texture2D" uid="uid://b33y8qn1r6kyt" path="res://Assets/fundoMenu1.png" id="2_4f7e1"]
+
+[node name="mainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 42.0
+offset_bottom = 48.0
+script = ExtResource("1_0uin0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_4f7e1")
+expand_mode = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 27.238
+anchor_bottom = 13.333
+offset_right = 8.00391
+offset_bottom = 8.01599
+
+[node name="boxButtons" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="buttonJogar" type="Button" parent="CenterContainer/boxButtons"]
+layout_mode = 2
+text = "Play"
+
+[node name="buttonConfigurar" type="Button" parent="CenterContainer/boxButtons"]
+layout_mode = 2
+text = "Settings"
+
+[node name="buttonCreditos" type="Button" parent="CenterContainer/boxButtons"]
+layout_mode = 2
+text = "Credits"
+
+[node name="buttonSair" type="Button" parent="CenterContainer/boxButtons"]
+layout_mode = 2
+text = "Exit"
+
+[node name="titulo" type="Label" parent="."]
+layout_mode = 2
+anchor_right = 27.429
+anchor_bottom = 13.5
+offset_left = 432.0
+offset_top = 160.0
+offset_right = -434.018
+offset_bottom = -465.0
+text = "Ponte Dos Números"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="CenterContainer/boxButtons/buttonJogar" to="." method="_on_button_jogar_pressed"]
+[connection signal="pressed" from="CenterContainer/boxButtons/buttonConfigurar" to="." method="_on_button_configurar_pressed"]
+[connection signal="pressed" from="CenterContainer/boxButtons/buttonCreditos" to="." method="_on_button_creditos_pressed"]
+[connection signal="pressed" from="CenterContainer/boxButtons/buttonSair" to="." method="_on_button_sair_pressed"]
