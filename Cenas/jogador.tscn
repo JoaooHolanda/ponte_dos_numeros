@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhtujwolyp3nj"]
+
+[ext_resource type="Script" uid="uid://djnkq2ocx00dq" path="res://scripts/jogador.gd" id="1_ivkba"]
+
+[node name="jogador" type="CharacterBody2D"]
+script = ExtResource("1_ivkba")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]

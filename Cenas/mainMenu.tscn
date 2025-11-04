@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://xisx6l6mek8w"]
 
-[ext_resource type="Script" uid="uid://dm47qrm05d4b7" path="res://mainMenu.gd" id="1_0uin0"]
+[ext_resource type="Script" uid="uid://dm47qrm05d4b7" path="res://scripts/mainMenu.gd" id="1_0uin0"]
 [ext_resource type="Texture2D" uid="uid://b33y8qn1r6kyt" path="res://Assets/img/fundoMenu1.png" id="2_4f7e1"]
 [ext_resource type="AudioStream" uid="uid://dnpe3ltdqe51f" path="res://Assets/musics/Lord of the Rings Sound of The Shire [LML6SoNE7xE].mp3" id="3_72bpb"]
 

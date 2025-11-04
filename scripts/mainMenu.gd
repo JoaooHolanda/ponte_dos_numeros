@@ -1,11 +1,7 @@
 extends Control
 
-
-
 func _ready():
 	$Musica_theme.play()
-	
-	
 
 func _on_button_jogar_pressed():
 	#get_tree().change_scene()

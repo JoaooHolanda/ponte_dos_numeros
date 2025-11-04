@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtvd30gjcu8sr"]
+
+[ext_resource type="Script" uid="uid://b2rk0ghstqh2p" path="res://scripts/fase1.gd" id="1_hqyny"]
+
+[node name="Fase1" type="Node2D"]
+script = ExtResource("1_hqyny")
+
+[node name="pontoNascimento" type="Node" parent="."]
+
+[node name="cenario" type="TileMap" parent="."]
+format = 2
+
+[node name="hud" type="CanvasLayer" parent="."]
+
+[node name="conta" type="Label" parent="hud"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="vidas" type="Label" parent="hud"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="musicaAmbiente" type="AudioStreamPlayer2D" parent="."]
+
+[node name="somDeAcerto" type="AudioStreamPlayer2D" parent="."]
+
+[node name="somDeErro" type="AudioStreamPlayer2D" parent="."]
