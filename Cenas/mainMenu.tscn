@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://xisx6l6mek8w"]
+[gd_scene load_steps=4 format=3 uid="uid://xisx6l6mek8w"]
 
 [ext_resource type="Script" uid="uid://dm47qrm05d4b7" path="res://mainMenu.gd" id="1_0uin0"]
-[ext_resource type="Texture2D" uid="uid://b33y8qn1r6kyt" path="res://Assets/fundoMenu1.png" id="2_4f7e1"]
+[ext_resource type="Texture2D" uid="uid://b33y8qn1r6kyt" path="res://Assets/img/fundoMenu1.png" id="2_4f7e1"]
+[ext_resource type="AudioStream" uid="uid://dnpe3ltdqe51f" path="res://Assets/musics/Lord of the Rings Sound of The Shire [LML6SoNE7xE].mp3" id="3_72bpb"]
 
 [node name="mainMenu" type="Control"]
 layout_mode = 3
@@ -30,22 +31,22 @@ layout_mode = 2
 
 [node name="buttonJogar" type="Button" parent="CenterContainer/boxButtons"]
 layout_mode = 2
-text = "Play"
+text = "Jogar"
 
 [node name="buttonConfigurar" type="Button" parent="CenterContainer/boxButtons"]
 layout_mode = 2
-text = "Settings"
+text = "Configurar"
 
 [node name="buttonCreditos" type="Button" parent="CenterContainer/boxButtons"]
 layout_mode = 2
-text = "Credits"
+text = "Créditos"
 
 [node name="buttonSair" type="Button" parent="CenterContainer/boxButtons"]
 layout_mode = 2
-text = "Exit"
+text = "Sair"
 
 [node name="titulo" type="Label" parent="."]
-layout_mode = 2
+layout_mode = 0
 anchor_right = 27.429
 anchor_bottom = 13.5
 offset_left = 432.0
@@ -54,6 +55,10 @@ offset_right = -434.018
 offset_bottom = -465.0
 text = "Ponte Dos Números"
 horizontal_alignment = 1
+
+[node name="Musica_theme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_72bpb")
+volume_db = -2.039
 
 [connection signal="pressed" from="CenterContainer/boxButtons/buttonJogar" to="." method="_on_button_jogar_pressed"]
 [connection signal="pressed" from="CenterContainer/boxButtons/buttonConfigurar" to="." method="_on_button_configurar_pressed"]

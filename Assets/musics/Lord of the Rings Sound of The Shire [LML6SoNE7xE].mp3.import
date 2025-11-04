@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dnpe3ltdqe51f"
+path="res://.godot/imported/Lord of the Rings Sound of The Shire [LML6SoNE7xE].mp3-75123bdb935a9b5cc7441fe28a16e34e.mp3str"
+
+[deps]
+
+source_file="res://Assets/musics/Lord of the Rings Sound of The Shire [LML6SoNE7xE].mp3"
+dest_files=["res://.godot/imported/Lord of the Rings Sound of The Shire [LML6SoNE7xE].mp3-75123bdb935a9b5cc7441fe28a16e34e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
