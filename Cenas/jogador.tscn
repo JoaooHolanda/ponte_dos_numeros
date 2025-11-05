@@ -1,12 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhtujwolyp3nj"]
+[gd_scene load_steps=4 format=3 uid="uid://dhtujwolyp3nj"]
 
 [ext_resource type="Script" uid="uid://djnkq2ocx00dq" path="res://scripts/jogador.gd" id="1_ivkba"]
+[ext_resource type="Texture2D" uid="uid://5onire0slenb" path="res://Assets/sprites/char_idle-removed.png" id="2_k5ljr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1gus"]
+size = Vector2(15, 16)
 
 [node name="jogador" type="CharacterBody2D"]
 script = ExtResource("1_ivkba")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0483033, 0.033117)
+texture = ExtResource("2_k5ljr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1)
+scale = Vector2(1, 1.06647)
+shape = SubResource("RectangleShape2D_j1gus")
 
 [node name="Camera2D" type="Camera2D" parent="."]

@@ -1,14 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtvd30gjcu8sr"]
+[gd_scene load_steps=4 format=3 uid="uid://dtvd30gjcu8sr"]
 
 [ext_resource type="Script" uid="uid://b2rk0ghstqh2p" path="res://scripts/fase1.gd" id="1_hqyny"]
+[ext_resource type="TileSet" uid="uid://dlb3gceom23ig" path="res://Assets/tileSets/prototipo.tres" id="2_12m1u"]
+[ext_resource type="Texture2D" uid="uid://x6g4474fmqhv" path="res://Assets/img/QuadriculadoPROTOTIPO.png" id="3_00j4k"]
 
 [node name="Fase1" type="Node2D"]
 script = ExtResource("1_hqyny")
 
-[node name="pontoNascimento" type="Node" parent="."]
-
-[node name="cenario" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_12m1u")
 format = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_right = 1156.0
+offset_bottom = 1024.0
+texture = ExtResource("3_00j4k")
+expand_mode = 1
+
+[node name="pontoNascimento" type="Node" parent="."]
 
 [node name="hud" type="CanvasLayer" parent="."]
 
