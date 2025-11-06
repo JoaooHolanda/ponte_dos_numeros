@@ -6151,4 +6151,6 @@ texture_region_size = Vector2i(20, 16)
 63:95/0 = 0
 
 [resource]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_eo7lk")
