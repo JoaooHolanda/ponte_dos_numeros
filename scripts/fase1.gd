@@ -1,16 +1,14 @@
 extends Node2D
 
-@onready var ponto_spawn = $pontoNascimento
-var jogador
+@onready var jogador = $jogador
 
 var resposta_certa = 0
 var blocos = []
 var vidas = 3
 
 func _ready():
-	var cena_jogador = preload("res://Cenas/jogador.tscn")
-	jogador = cena_jogador.instantiate()
-	jogador.position = ponto_spawn.position
+	#var cena_jogador = preload("res://Cenas/jogador.tscn")
+	jogador.position = position
 	add_child(jogador)
 	gerar_pergunta()
 	atualizar_vidas()
