@@ -9,10 +9,10 @@
 script = ExtResource("1_hqyny")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -18.0
-offset_top = -207.0
-offset_right = 1138.0
-offset_bottom = 817.0
+offset_left = -4.0
+offset_top = -216.0
+offset_right = 1152.0
+offset_bottom = 808.0
 texture = ExtResource("2_12m1u")
 expand_mode = 1
 

@@ -9,7 +9,6 @@ var vidas = 3
 func _ready():
 	#var cena_jogador = preload("res://Cenas/jogador.tscn")
 	jogador.position = position
-	add_child(jogador)
 	gerar_pergunta()
 	atualizar_vidas()
 
@@ -41,7 +40,7 @@ func tocar_acerto():
 	$somDeAcerto.play()
 
 func tocar_erro():
-	$somDeErro
+	$somDeErro.play()
 
 func check_answer(posicao_jogador):
 	for bloco in blocos:
