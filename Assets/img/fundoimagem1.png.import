@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8vgt07a2hwv6"
-path="res://.godot/imported/char_walking-removed.png-3fc8c1024ca58a533d8cdfadf8ce34d9.ctex"
+uid="uid://crg3r2ut02g5r"
+path="res://.godot/imported/fundoimagem1.png-84eaa2e29e44e7ff0cd65d5ee3b75679.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/char_walking-removed.png"
-dest_files=["res://.godot/imported/char_walking-removed.png-3fc8c1024ca58a533d8cdfadf8ce34d9.ctex"]
+source_file="res://Assets/img/fundoimagem1.png"
+dest_files=["res://.godot/imported/fundoimagem1.png-84eaa2e29e44e7ff0cd65d5ee3b75679.ctex"]
 
 [params]
 

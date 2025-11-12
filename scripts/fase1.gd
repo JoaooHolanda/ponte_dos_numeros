@@ -16,7 +16,7 @@ func gerar_pergunta():
 	var a = randi() % 50
 	var b = randi() % 50
 	resposta_certa = a + b
-	$hud/conta.text = "%d + %d = ?" % [a, b]
+	$conta.text = "%d + %d = ?" % [a, b]
 	gerar_blocos([resposta_certa, resposta_certa + 1, resposta_certa - 1])
 
 func gerar_blocos(valores):
@@ -59,6 +59,6 @@ func check_answer(posicao_jogador):
 	jogador.pode_escolher = true
 
 func atualizar_vidas():
-	$hud/vidas.text = "Vidas: %d" % vidas
+	#$hud/vidas.text = "Vidas: %d" % vidas
 	if vidas <= 0:
 		get_tree().reload_current_scene()

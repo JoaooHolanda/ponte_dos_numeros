@@ -20,17 +20,7 @@ expand_mode = 1
 position = Vector2(5, 0)
 tile_set = ExtResource("3_00j4k")
 format = 2
-layer_0/tile_data = PackedInt32Array(2424835, 1572864, 29, 2424843, 1572864, 29, 2424851, 1572864, 29, 2424859, 1572864, 29, 2424867, 1572864, 29, 2424875, 1572864, 29, 2424882, 1572864, 29, 2424889, 1572864, 29, 2424897, 1572864, 29)
-
-[node name="hud" type="CanvasLayer" parent="."]
-
-[node name="conta" type="Label" parent="hud"]
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="vidas" type="Label" parent="hud"]
-offset_right = 40.0
-offset_bottom = 23.0
+layer_0/tile_data = PackedInt32Array(2424835, 1572864, 29, 2424843, 1572864, 29, 2424851, 1572864, 29, 2293790, 2752512, 48, 2359334, 2293760, 38, 2359349, 1572864, 29, 2359358, 1572864, 29, 2228293, 2293760, 38, 1507396, 1638400, 1)
 
 [node name="musicaAmbiente" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(104, 556)
@@ -43,3 +33,42 @@ position = Vector2(72, 517)
 
 [node name="jogador" parent="." instance=ExtResource("4_00j4k")]
 position = Vector2(385, 515)
+
+[node name="conta" type="Label" parent="."]
+anchors_preset = -1
+anchor_right = 0.35500002
+anchor_bottom = 0.41500002
+offset_left = 723.0
+offset_top = 280.0
+offset_right = 776.0
+offset_bottom = 303.0
+scale = Vector2(3, 3)
+text = "20 + 5?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Opção 1" type="Label" parent="."]
+anchors_preset = -1
+anchor_right = 0.35500002
+anchor_bottom = 0.41500002
+offset_left = 598.0
+offset_top = 549.0
+offset_right = 617.0
+offset_bottom = 572.0
+scale = Vector2(3, 3)
+text = "27"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Opção 2" type="Label" parent="."]
+anchors_preset = -1
+anchor_right = 0.35500002
+anchor_bottom = 0.41500002
+offset_left = 461.0
+offset_top = 535.0
+offset_right = 480.0
+offset_bottom = 558.0
+scale = Vector2(3, 3)
+text = "25"
+horizontal_alignment = 1
+vertical_alignment = 1
