@@ -1,55 +1,55 @@
 extends Node2D
 
 @onready var jogador = $jogador
+@onready var label_conta = $centralLabels/conta
+@onready var label_opcao1 = $centralLabels/opcao1
+@onready var label_opcao2 = $centralLabels/opcao2
+@onready var label_vidas = $centralLabels/vidas
+@onready var som_acerto = $somDeAcerto
+@onready var som_erro = $somDeErro
 
 var resposta_certa = 0
-var blocos = []
+var tipo_operacao = "+"
 var vidas = 3
 
 func _ready():
-	#var cena_jogador = preload("res://Cenas/jogador.tscn")
 	jogador.position = position
-	gerar_pergunta()
+	gerar_equacao()
 	atualizar_vidas()
 
-func gerar_pergunta():
+# Gera equação aleatória de soma ou subtração
+func gerar_equacao():
 	var a = randi() % 50
 	var b = randi() % 50
-	resposta_certa = a + b
-	$conta.text = "%d + %d = ?" % [a, b]
-	gerar_blocos([resposta_certa, resposta_certa + 1, resposta_certa - 1])
 
-func gerar_blocos(valores):
-	blocos.clear()
-	for i in range(3):
-		var bloco = criar_bloco(valores[i], Vector2(200 + i * 150, 400))
-		blocos.append(bloco)
+	if randi() % 2 == 0:
+		tipo_operacao = "+"
+		resposta_certa = a + b
+	else:
+		tipo_operacao = "-"
+		resposta_certa = a - b
 
-func criar_bloco(valor, pos):
-	var bloco = Node2D.new()
-	var label = Label.new()
-	label.text = str(valor)
-	bloco.position = pos
-	bloco.add_child(label)
-	bloco.set_meta("valor", valor)
-	add_child(bloco)
-	return bloco
+	label_conta.text = "%d %s %d = ?" % [a, tipo_operacao, b]
 
+	var deslocamento = randi() % 5 + 1
+	var direcao = 1 if randi() % 2 == 0 else -1
+	var errada = resposta_certa + deslocamento * direcao
 
-func tocar_acerto():
-	$somDeAcerto.play()
+	var valores = [resposta_certa, errada]
+	valores.shuffle()
 
-func tocar_erro():
-	$somDeErro.play()
+	label_opcao1.text = str(valores[0])
+	label_opcao2.text = str(valores[1])
 
+# Verifica se o jogador escolheu a resposta certa
 func check_answer(posicao_jogador):
-	for bloco in blocos:
-		if bloco.get_global_rect().has_point(posicao_jogador):
-			var valor = bloco.get_meta("valor")
+	for opcao in [label_opcao1, label_opcao2]:
+		if opcao.get_global_rect().has_point(posicao_jogador):
+			var valor = int(opcao.text)
 			if valor == resposta_certa:
 				tocar_acerto()
 				jogador.position.x += 150
-				gerar_pergunta()
+				gerar_equacao()
 			else:
 				tocar_erro()
 				vidas -= 1
@@ -58,7 +58,15 @@ func check_answer(posicao_jogador):
 			break
 	jogador.pode_escolher = true
 
+# Atualiza HUD de vidas
 func atualizar_vidas():
-	#$hud/vidas.text = "Vidas: %d" % vidas
+	label_vidas.text = "Vidas: %d" % vidas
 	if vidas <= 0:
 		get_tree().reload_current_scene()
+
+# Sons
+func tocar_acerto():
+	som_acerto.play()
+
+func tocar_erro():
+	som_erro.play()

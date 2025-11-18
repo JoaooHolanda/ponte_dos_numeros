@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://dhtujwolyp3nj"]
 
 [ext_resource type="Script" uid="uid://djnkq2ocx00dq" path="res://scripts/jogador.gd" id="1_ivkba"]
-[ext_resource type="Texture2D" uid="uid://cm3h0dxvbrv6g" path="res://Assets/Sprites/char_idle_removed (1).png" id="2_qa3s7"]
-[ext_resource type="Texture2D" uid="uid://rccocd47d4tu" path="res://Assets/Sprites/char_jumping-removed.png" id="3_je303"]
-[ext_resource type="Texture2D" uid="uid://b8vgt07a2hwv6" path="res://Assets/Sprites/char_walking-removed.png" id="4_hnlyw"]
+[ext_resource type="Texture2D" uid="uid://cm3h0dxvbrv6g" path="res://Assets/sprites/char_idle_removed (1).png" id="2_qa3s7"]
+[ext_resource type="Texture2D" uid="uid://rccocd47d4tu" path="res://Assets/sprites/char_jumping-removed.png" id="3_je303"]
+[ext_resource type="Texture2D" uid="uid://b8vgt07a2hwv6" path="res://Assets/sprites/char_walking-removed.png" id="4_hnlyw"]
 [ext_resource type="Script" uid="uid://n2x2t0h8th4l" path="res://Cenas/animacoes.gd" id="5_je303"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mage0"]
@@ -34,7 +34,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j1gus"]
-size = Vector2(35, 49.28512)
+size = Vector2(35, 49.2851)
 
 [node name="jogador" type="CharacterBody2D"]
 position = Vector2(2, 0)
@@ -45,12 +45,10 @@ script = ExtResource("1_ivkba")
 position = Vector2(-2, 0)
 scale = Vector2(0.096, 0.114)
 sprite_frames = SubResource("SpriteFrames_mage0")
-animation = &"run"
+animation = &"idle"
 script = ExtResource("5_je303")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, -0.7194513)
+position = Vector2(-1.5, -0.719451)
 scale = Vector2(1, 1.06647)
 shape = SubResource("RectangleShape2D_j1gus")
-
-[node name="Camera2D" type="Camera2D" parent="."]
