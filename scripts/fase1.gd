@@ -11,12 +11,33 @@ extends Node2D
 var resposta_certa = 0
 var tipo_operacao = "+"
 var vidas = 3
+var indice_selecionado = 0 # 0 = opcao1, 1 = opcao2
 
 func _ready():
 	gerar_equacao()
 	atualizar_vidas()
 
-# Gera equação aleatória de soma ou subtração sem resultado negativo
+func _process(delta):
+	atualizar_selecao()
+
+func _input(event):
+	if event.is_action_pressed("direita") or event.is_action_pressed("ui_right"):
+		indice_selecionado = min(indice_selecionado + 1, 1)
+	elif event.is_action_pressed("esquerda") or event.is_action_pressed("ui_left"):
+		indice_selecionado = max(indice_selecionado - 1, 0)
+	elif event.is_action_pressed("selecionar") and jogador.pode_escolher:
+		var opcao_escolhida = [label_opcao1, label_opcao2][indice_selecionado]
+		var valor = int(opcao_escolhida.text)
+		if valor == resposta_certa:
+			tocar_acerto()
+			print("Resposta correta:", valor)
+			get_tree().change_scene_to_file("res://Cenas/fase_2.tscn")
+		else:
+			tocar_erro()
+			vidas -= 1
+			atualizar_vidas()
+		jogador.pode_escolher = true
+
 func gerar_equacao():
 	var a = randi() % 50
 	var b = randi() % 50
@@ -26,7 +47,6 @@ func gerar_equacao():
 		resposta_certa = a + b
 	else:
 		tipo_operacao = "-"
-		# garante que a >= b para evitar resultado negativo
 		if a < b:
 			var temp = a
 			a = b
@@ -44,31 +64,13 @@ func gerar_equacao():
 
 	label_opcao1.text = str(valores[0])
 	label_opcao2.text = str(valores[1])
+	indice_selecionado = 0 # reinicia seleção
 
-# Verifica se o jogador escolheu a resposta certa
-func check_answer(posicao_jogador):
-	for opcao in [label_opcao1, label_opcao2]:
-		if opcao.get_global_rect().has_point(posicao_jogador):
-			var valor = int(opcao.text)
-			if valor == resposta_certa:
-				tocar_acerto()
-				jogador.position.x += 150
-				gerar_equacao()
-			else:
-				tocar_erro()
-				vidas -= 1
-				atualizar_vidas()
-				jogador.position.x -= 150
-			break
-	jogador.pode_escolher = true
-
-# Atualiza HUD de vidas
 func atualizar_vidas():
 	label_vidas.text = "Vidas: %d" % vidas
 	if vidas <= 0:
 		get_tree().reload_current_scene()
 
-# Sons
 func tocar_acerto():
 	som_acerto.play()
 
@@ -76,8 +78,7 @@ func tocar_erro():
 	som_erro.play()
 
 func atualizar_selecao():
-	for opcao in [label_opcao1, label_opcao2]:
-		if opcao.get_global_rect().has_point(jogador.global_position):
-			opcao.self_modulate = Color(1, 1, 0.5) # amarelo claro
-		else:
-			opcao.self_modulate = Color(1, 1, 1) # branco
+	var opcoes = [label_opcao1, label_opcao2]
+	for i in range(opcoes.size()):
+		opcoes[i].self_modulate = Color(1, 1, 1) # branco
+	opcoes[indice_selecionado].self_modulate = Color(1, 1, 0.5) # amarelo claro

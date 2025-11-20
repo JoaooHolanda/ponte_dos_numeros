@@ -6,7 +6,7 @@ var velocidade = 200
 @export var run_speed_damping = 0.5
 @export var speed = 100.0
 @export var jump_velocity = -350
-@export var gravity = 800.0 # força da gravidade
+@export var gravity = 800.0
 
 func _physics_process(delta):
 	var direcao = Vector2.ZERO
@@ -32,14 +32,3 @@ func _physics_process(delta):
 	# Gravidade
 	if not is_on_floor():
 		velocity.y += gravity * delta
-
-	# Aplica movimento
-	move_and_slide()
-
-
-
-
-func _input(event):
-	if event.is_action_pressed("selecionar") and pode_escolher:
-		get_parent().check_answer(global_position)
-		pode_escolher = false
