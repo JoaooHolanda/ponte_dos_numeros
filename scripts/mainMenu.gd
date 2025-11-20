@@ -4,7 +4,7 @@ func _ready():
 	$Musica_theme.play()
 
 func _on_button_jogar_pressed():
-	#get_tree().change_scene()
+	get_tree().change_scene_to_file("res://Cenas/fase_1.tscn")
 	print("Jogando")
 
 func _on_button_configurar_pressed():

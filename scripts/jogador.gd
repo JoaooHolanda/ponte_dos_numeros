@@ -1,28 +1,45 @@
 extends CharacterBody2D
 
-const SPEED = 200
-const GRAVITY = 900
-const JUMP_FORCE = -400
-
 var pode_escolher = true
+var velocidade = 200
+
+@export var run_speed_damping = 0.5
+@export var speed = 100.0
+@export var jump_velocity = -350
+@export var gravity = 800.0 # força da gravidade
 
 func _physics_process(delta):
-	velocity.y += GRAVITY * delta
-	var direcao = Input.get_axis("ui_left", "ui_right")
-	velocity.x = direcao * SPEED
+	var direcao = Vector2.ZERO
 
-	if is_on_floor() and Input.is_action_just_pressed("ui_accept"):
-		velocity.y = JUMP_FORCE
+	# Movimento horizontal
+	if Input.is_action_pressed("direita"):
+		direcao.x += 1
+	if Input.is_action_pressed("esquerda"):
+		direcao.x -= 1
 
-	if Input.is_action_just_pressed("ui_select") and pode_escolher:
-		pode_escolher = false
-		get_tree().current_scene.check_answer(global_position)
+	if direcao.x != 0:
+		velocity.x = lerp(velocity.x, speed * direcao.x, run_speed_damping * delta)
+	else:
+		velocity.x = move_toward(velocity.x, 0, speed * delta)
 
-func tentar_responder():
-	for bloco in get_tree().current_scene.opcoes:
-		if bloco.get_global_rect().has_point(global_position):
-			var valor = bloco.get_meta("valor")
-			get_tree().current_scene.verificar_resposta(valor)
-			break
+	# Pulo
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = jump_velocity
 
+	if Input.is_action_just_released("jump") and velocity.y < 0:
+		velocity.y *= 0.5
+
+	# Gravidade
+	if not is_on_floor():
+		velocity.y += gravity * delta
+
+	# Aplica movimento
 	move_and_slide()
+
+
+
+
+func _input(event):
+	if event.is_action_pressed("selecionar") and pode_escolher:
+		get_parent().check_answer(global_position)
+		pode_escolher = false

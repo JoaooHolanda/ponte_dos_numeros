@@ -1276,10 +1276,12 @@ texture = ExtResource("1_irsuj")
 30:48/0 = 0
 42:48/size_in_atlas = Vector2i(5, 5)
 42:48/0 = 0
+42:48/0/physics_layer_0/polygon_0/points = PackedVector2Array(-41.5, -29.5, -33.5, -33.5, -21.5, -33.5, 7.5, -33.5, 22.5, -32.5, 26.5, -22.5, 27.5, -12.5, 27.5, -3.5, 24.5, 7.5, 27.5, 25.5, 22.5, 32.5, 10.5, 32.5, -17.5, 32.5, -39.8601, 31.0023)
 41:42/size_in_atlas = Vector2i(6, 5)
 41:42/0 = 0
 35:38/size_in_atlas = Vector2i(5, 9)
 35:38/0 = 0
+35:38/0/physics_layer_0/polygon_0/points = PackedVector2Array(-36.317, -66.4335, -22.1445, -66.4335, 32.7739, -66.4335, 38.0886, -52.261, 39.8601, 62.8904, 27.4592, 66.4335, -18.6014, 66.4335, -38.0886, 62.8904)
 20:38/size_in_atlas = Vector2i(14, 9)
 20:38/0 = 0
 1:38/size_in_atlas = Vector2i(18, 9)
@@ -1312,4 +1314,5 @@ texture = ExtResource("1_irsuj")
 
 [resource]
 physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_sueke")

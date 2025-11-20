@@ -318,10 +318,17 @@ position = Vector2(72, 517)
 [node name="jogador" parent="." instance=ExtResource("4_0v05o")]
 position = Vector2(385, 515)
 
-[node name="conta" type="Label" parent="."]
+[node name="centralLabels" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="conta" type="Label" parent="centralLabels"]
+layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.35500002
-anchor_bottom = 0.41500002
+anchor_right = 0.355
+anchor_bottom = 0.415
 offset_left = 749.0
 offset_top = 365.0
 offset_right = 802.0
@@ -331,10 +338,11 @@ text = "20 + 5?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Opção 1" type="Label" parent="."]
+[node name="opcao1" type="Label" parent="centralLabels"]
+layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.35500002
-anchor_bottom = 0.41500002
+anchor_right = 0.355
+anchor_bottom = 0.415
 offset_left = 581.0
 offset_top = 539.0
 offset_right = 600.0
@@ -344,10 +352,11 @@ text = "27"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Opção 2" type="Label" parent="."]
+[node name="opcao2" type="Label" parent="centralLabels"]
+layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.35500002
-anchor_bottom = 0.41500002
+anchor_right = 0.355
+anchor_bottom = 0.415
 offset_left = 454.0
 offset_top = 542.0
 offset_right = 473.0
@@ -356,3 +365,8 @@ scale = Vector2(3, 3)
 text = "25"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="vidas" type="Label" parent="centralLabels"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

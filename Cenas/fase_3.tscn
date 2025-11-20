@@ -159,8 +159,8 @@ position = Vector2(385, 515)
 
 [node name="conta" type="Label" parent="."]
 anchors_preset = -1
-anchor_right = 0.35500002
-anchor_bottom = 0.41500002
+anchor_right = 0.355
+anchor_bottom = 0.415
 offset_left = 749.0
 offset_top = 365.0
 offset_right = 802.0
@@ -172,8 +172,8 @@ vertical_alignment = 1
 
 [node name="Opção 1" type="Label" parent="."]
 anchors_preset = -1
-anchor_right = 0.35500002
-anchor_bottom = 0.41500002
+anchor_right = 0.355
+anchor_bottom = 0.415
 offset_left = 581.0
 offset_top = 539.0
 offset_right = 600.0
@@ -185,8 +185,8 @@ vertical_alignment = 1
 
 [node name="Opção 2" type="Label" parent="."]
 anchors_preset = -1
-anchor_right = 0.35500002
-anchor_bottom = 0.41500002
+anchor_right = 0.355
+anchor_bottom = 0.415
 offset_left = 454.0
 offset_top = 542.0
 offset_right = 473.0

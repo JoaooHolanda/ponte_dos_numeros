@@ -13,11 +13,10 @@ var tipo_operacao = "+"
 var vidas = 3
 
 func _ready():
-	jogador.position = position
 	gerar_equacao()
 	atualizar_vidas()
 
-# Gera equação aleatória de soma ou subtração
+# Gera equação aleatória de soma ou subtração sem resultado negativo
 func gerar_equacao():
 	var a = randi() % 50
 	var b = randi() % 50
@@ -27,6 +26,11 @@ func gerar_equacao():
 		resposta_certa = a + b
 	else:
 		tipo_operacao = "-"
+		# garante que a >= b para evitar resultado negativo
+		if a < b:
+			var temp = a
+			a = b
+			b = temp
 		resposta_certa = a - b
 
 	label_conta.text = "%d %s %d = ?" % [a, tipo_operacao, b]
@@ -70,3 +74,10 @@ func tocar_acerto():
 
 func tocar_erro():
 	som_erro.play()
+
+func atualizar_selecao():
+	for opcao in [label_opcao1, label_opcao2]:
+		if opcao.get_global_rect().has_point(jogador.global_position):
+			opcao.self_modulate = Color(1, 1, 0.5) # amarelo claro
+		else:
+			opcao.self_modulate = Color(1, 1, 1) # branco
