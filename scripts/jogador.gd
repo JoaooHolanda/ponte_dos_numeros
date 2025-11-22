@@ -3,10 +3,10 @@ extends CharacterBody2D
 var pode_escolher = true
 var velocidade = 200
 
-@export var run_speed_damping = 0.5
-@export var speed = 100.0
-@export var jump_velocity = -350
-@export var gravity = 800.0
+@export var speed := 220.0
+@export var run_speed_damping := 7.0
+@export var gravity := 900.0
+@export var jump_velocity := -380.0
 
 func _physics_process(delta):
 	var direcao = Vector2.ZERO
@@ -32,3 +32,23 @@ func _physics_process(delta):
 	# Gravidade
 	if not is_on_floor():
 		velocity.y += gravity * delta
+
+	move_and_slide()
+
+
+# =====================================================
+#  FUNÇÕES DE COLISÃO — PARA ATRAVESSAR O CENÁRIO
+# =====================================================
+
+func desativar_colisao():
+	# Desliga colisão do jogador
+	set_collision_layer(0)
+	set_collision_mask(0)
+	print("Colisão do jogador DESATIVADA")
+
+
+func ativar_colisao():
+	# Liga colisão normal (layer 1, mask 1)
+	set_collision_layer(1)
+	set_collision_mask(1)
+	print("Colisão do jogador REATIVADA")

@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://db0x5gtfwpfq5"]
+[gd_scene load_steps=13 format=3 uid="uid://db0x5gtfwpfq5"]
 
 [ext_resource type="Script" uid="uid://b2rk0ghstqh2p" path="res://scripts/fase1.gd" id="1_c1qc7"]
 [ext_resource type="Texture2D" uid="uid://crg3r2ut02g5r" path="res://Assets/img/fundoimagem1.png" id="2_c1qc7"]
 [ext_resource type="PackedScene" uid="uid://dhtujwolyp3nj" path="res://Cenas/jogador.tscn" id="4_0v05o"]
 [ext_resource type="Texture2D" uid="uid://djfcyqdvgxr3s" path="res://Assets/img/purplecity.png" id="4_41ryc"]
+[ext_resource type="Script" uid="uid://ces00s8lvr5ds" path="res://scripts/colisaoopcao.gd" id="4_jf64f"]
+[ext_resource type="Script" uid="uid://ffp3qchjmej2" path="res://Cenas/colisaoopcao2.gd" id="5_0v05o"]
+[ext_resource type="Script" uid="uid://btjpc35w12c1r" path="res://Cenas/queda.gd" id="6_ev8p6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jf64f"]
 texture = ExtResource("4_41ryc")
@@ -290,14 +293,23 @@ texture_region_size = Vector2i(10, 12)
 [sub_resource type="TileSet" id="TileSet_0v05o"]
 sources/0 = SubResource("TileSetAtlasSource_jf64f")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvsrr"]
+size = Vector2(84, 108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f7siq"]
+size = Vector2(65, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7qfa"]
+size = Vector2(1153, 224)
+
 [node name="Fase2" type="Node2D"]
 script = ExtResource("1_c1qc7")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-offset_left = -5.0
-offset_top = -217.0
-offset_right = 1151.0
-offset_bottom = 807.0
+offset_left = -103.0
+offset_top = -185.0
+offset_right = 1053.0
+offset_bottom = 839.0
 texture = ExtResource("2_c1qc7")
 expand_mode = 1
 
@@ -338,8 +350,15 @@ text = "20 + 5?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="opcao1" type="Label" parent="centralLabels"]
-layout_mode = 1
+[node name="vidas" type="Label" parent="centralLabels"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="opcao1_1" type="Area2D" parent="."]
+script = ExtResource("4_jf64f")
+
+[node name="opcao1" type="Label" parent="opcao1_1"]
 anchors_preset = -1
 anchor_right = 0.355
 anchor_bottom = 0.415
@@ -352,8 +371,14 @@ text = "25"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="opcao2" type="Label" parent="centralLabels"]
-layout_mode = 1
+[node name="colisaoopcao1" type="CollisionShape2D" parent="opcao1_1"]
+position = Vector2(481, 572)
+shape = SubResource("RectangleShape2D_mvsrr")
+
+[node name="opcao2_2" type="Area2D" parent="."]
+script = ExtResource("5_0v05o")
+
+[node name="opcao2" type="Label" parent="opcao2_2"]
 anchors_preset = -1
 anchor_right = 0.355
 anchor_bottom = 0.415
@@ -366,7 +391,18 @@ text = "27"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="vidas" type="Label" parent="centralLabels"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="colisaoopcao2" type="CollisionShape2D" parent="opcao2_2"]
+position = Vector2(610.5, 580)
+shape = SubResource("RectangleShape2D_f7siq")
+
+[node name="queda" type="Area2D" parent="."]
+position = Vector2(169, 883)
+script = ExtResource("6_ev8p6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="queda"]
+position = Vector2(406.5, -102)
+shape = SubResource("RectangleShape2D_o7qfa")
+
+[connection signal="body_entered" from="opcao1_1" to="opcao1_1" method="_on_body_entered"]
+[connection signal="body_entered" from="opcao2_2" to="opcao2_2" method="_on_body_entered"]
+[connection signal="body_entered" from="queda" to="queda" method="_on_body_entered"]

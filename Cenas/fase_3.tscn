@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmatdeo4obw8y"]
+[gd_scene load_steps=11 format=3 uid="uid://bmatdeo4obw8y"]
 
 [ext_resource type="Script" uid="uid://b2rk0ghstqh2p" path="res://scripts/fase1.gd" id="1_mtfx8"]
 [ext_resource type="Texture2D" uid="uid://j1dkag08escd" path="res://Assets/img/fase_3_fundo.png" id="2_mtfx8"]
 [ext_resource type="Texture2D" uid="uid://dtrfmsg2klkou" path="res://Assets/img/tileset.png" id="4_pgpv6"]
 [ext_resource type="PackedScene" uid="uid://dhtujwolyp3nj" path="res://Cenas/jogador.tscn" id="4_qt4wc"]
+[ext_resource type="Script" uid="uid://ces00s8lvr5ds" path="res://scripts/colisaoopcao.gd" id="5_qt4wc"]
+[ext_resource type="Script" uid="uid://ffp3qchjmej2" path="res://Cenas/colisaoopcao2.gd" id="6_kg7lx"]
+[ext_resource type="Script" uid="uid://btjpc35w12c1r" path="res://Cenas/queda.gd" id="7_rk7hk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8tjhp"]
 texture = ExtResource("4_pgpv6")
@@ -129,6 +132,9 @@ texture = ExtResource("4_pgpv6")
 [sub_resource type="TileSet" id="TileSet_qt4wc"]
 sources/0 = SubResource("TileSetAtlasSource_8tjhp")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdxkg"]
+size = Vector2(1153, 224)
+
 [node name="Fase3" type="Node2D"]
 script = ExtResource("1_mtfx8")
 
@@ -157,20 +163,28 @@ layer_0/tile_data = PackedInt32Array(2752513, 196608, 10, 2818049, 196608, 9, 28
 [node name="jogador" parent="." instance=ExtResource("4_qt4wc")]
 position = Vector2(385, 515)
 
-[node name="conta" type="Label" parent="."]
+[node name="opcao1_1" type="Area2D" parent="."]
+script = ExtResource("5_qt4wc")
+
+[node name="opcao1" type="Label" parent="opcao1_1"]
 anchors_preset = -1
 anchor_right = 0.355
 anchor_bottom = 0.415
-offset_left = 749.0
-offset_top = 365.0
-offset_right = 802.0
-offset_bottom = 388.0
+offset_left = 454.0
+offset_top = 542.0
+offset_right = 473.0
+offset_bottom = 565.0
 scale = Vector2(3, 3)
-text = "20 + 5?"
+text = "25"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Opção 1" type="Label" parent="."]
+[node name="colisaoopcao1" type="CollisionShape2D" parent="opcao1_1"]
+
+[node name="opcao2_2" type="Area2D" parent="."]
+script = ExtResource("6_kg7lx")
+
+[node name="opcao2" type="Label" parent="opcao2_2"]
 anchors_preset = -1
 anchor_right = 0.355
 anchor_bottom = 0.415
@@ -183,15 +197,41 @@ text = "27"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Opção 2" type="Label" parent="."]
+[node name="colisaoopcao2" type="CollisionShape2D" parent="opcao2_2"]
+
+[node name="centralLabels" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="conta" type="Label" parent="centralLabels"]
+layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.355
 anchor_bottom = 0.415
-offset_left = 454.0
-offset_top = 542.0
-offset_right = 473.0
-offset_bottom = 565.0
+offset_left = 749.0
+offset_top = 365.0
+offset_right = 802.0
+offset_bottom = 388.0
 scale = Vector2(3, 3)
-text = "25"
+text = "20 + 5?"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="vidas" type="Label" parent="centralLabels"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="queda" type="Area2D" parent="."]
+position = Vector2(169, 883)
+script = ExtResource("7_rk7hk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="queda"]
+position = Vector2(406.5, -102)
+shape = SubResource("RectangleShape2D_cdxkg")
+
+[connection signal="body_entered" from="opcao1_1" to="opcao1_1" method="_on_body_entered"]
+[connection signal="body_entered" from="opcao2_2" to="opcao2_2" method="_on_body_entered"]
+[connection signal="body_entered" from="queda" to="queda" method="_on_body_entered"]
