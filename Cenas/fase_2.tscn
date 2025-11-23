@@ -1,11 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://db0x5gtfwpfq5"]
+[gd_scene load_steps=15 format=3 uid="uid://db0x5gtfwpfq5"]
 
 [ext_resource type="Script" uid="uid://dqltjx7kc7r7u" path="res://scripts/fase2.gd" id="1_0v05o"]
 [ext_resource type="Texture2D" uid="uid://crg3r2ut02g5r" path="res://Assets/img/fundoimagem1.png" id="2_c1qc7"]
 [ext_resource type="PackedScene" uid="uid://dhtujwolyp3nj" path="res://Cenas/jogador.tscn" id="4_0v05o"]
 [ext_resource type="Texture2D" uid="uid://djfcyqdvgxr3s" path="res://Assets/img/purplecity.png" id="4_41ryc"]
 [ext_resource type="Script" uid="uid://ces00s8lvr5ds" path="res://scripts/colisaoopcao.gd" id="4_jf64f"]
+[ext_resource type="AudioStream" uid="uid://ma6765oscgs4" path="res://Assets/musics/the_price_is_right_ding.mp3" id="4_mvsrr"]
 [ext_resource type="Script" uid="uid://ffp3qchjmej2" path="res://Cenas/colisaoopcao2.gd" id="5_0v05o"]
+[ext_resource type="AudioStream" uid="uid://buam2fhyk8321" path="res://Assets/musics/error_CDOxCYm.mp3" id="5_f7siq"]
 [ext_resource type="Script" uid="uid://btjpc35w12c1r" path="res://Cenas/queda.gd" id="6_ev8p6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jf64f"]
@@ -329,9 +331,11 @@ position = Vector2(104, 556)
 
 [node name="somDeAcerto" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(104, 545)
+stream = ExtResource("4_mvsrr")
 
 [node name="somDeErro" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(72, 517)
+stream = ExtResource("5_f7siq")
 
 [node name="jogador" parent="." instance=ExtResource("4_0v05o")]
 position = Vector2(385, 515)

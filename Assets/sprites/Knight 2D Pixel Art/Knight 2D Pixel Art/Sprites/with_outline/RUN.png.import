@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://clhqhxcog6sc4"
-path="res://.godot/imported/RUN.png-9c66e0d669b4f3856392507db3deec92.ctex"
+path="res://.godot/imported/RUN.png-19e1bcd1f22f6830d957151ae7f6d658.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Knight 2D Pixel Art/Knight 2D Pixel Art/Sprites/with_outline/RUN.png"
-dest_files=["res://.godot/imported/RUN.png-9c66e0d669b4f3856392507db3deec92.ctex"]
+source_file="res://Assets/sprites/Knight 2D Pixel Art/Knight 2D Pixel Art/Sprites/with_outline/RUN.png"
+dest_files=["res://.godot/imported/RUN.png-19e1bcd1f22f6830d957151ae7f6d658.ctex"]
 
 [params]
 

@@ -16,6 +16,7 @@ signal opcao_encostada(id)
 @onready var area_opcao1 = $opcao1_1
 @onready var area_opcao2 = $opcao2_2
 
+# Sons
 @onready var som_acerto = $somDeAcerto
 @onready var som_erro = $somDeErro
 
@@ -25,10 +26,9 @@ var indice_selecionado = 0
 
 var tween_piscando: Tween = null
 
+
 func _ready():
 	randomize()
-	
-	
 
 	# Conectar as Áreas2D
 	area_opcao1.body_entered.connect(_on_opcao1)
@@ -62,6 +62,7 @@ func iniciar_piscar(label: Label):
 	tween_piscando.tween_property(label, "self_modulate", Color(1,1,0.4), 0.3)
 	tween_piscando.tween_property(label, "self_modulate", Color(1,1,1), 0.3)
 
+
 func parar_piscar():
 	if tween_piscando:
 		tween_piscando.kill()
@@ -86,7 +87,9 @@ func tratar_escolha():
 
 	if valor == resposta_certa:
 		som_acerto.play()
+		await get_tree().create_timer(0.6).timeout
 		get_tree().change_scene_to_file("res://Cenas/fase_3.tscn")
+
 	else:
 		som_erro.play()
 		vidas -= 1
@@ -95,6 +98,7 @@ func tratar_escolha():
 		# ERRO → desativar colisão do player
 		jogador.set_collision_layer(0)
 		jogador.set_collision_mask(0)
+
 		await get_tree().create_timer(1.0).timeout
 		get_tree().change_scene_to_file("res://Cenas/fase_1.tscn")
 
@@ -104,12 +108,9 @@ func tratar_escolha():
 func gerar_equacao():
 	var a = randi() % 10
 	var b = randi() % 10
-	
-
 
 	resposta_certa = a * b
-	label_conta.text = "%d * %d = ?" % [a, b]
-	
+	label_conta.text = "%d × %d = ?" % [a, b]
 
 	# gerando valor errado
 	var errada = resposta_certa

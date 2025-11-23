@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmdmw718fy0q5"
-path="res://.godot/imported/ATTACK 1.png-bc71fdff9080ddb9bb6250d42404b988.ctex"
+path="res://.godot/imported/ATTACK 1.png-ba7c5eded433095c124a46a49bd47d05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Knight 2D Pixel Art/Knight 2D Pixel Art/Sprites/with_outline/ATTACK 1.png"
-dest_files=["res://.godot/imported/ATTACK 1.png-bc71fdff9080ddb9bb6250d42404b988.ctex"]
+source_file="res://Assets/sprites/Knight 2D Pixel Art/Knight 2D Pixel Art/Sprites/with_outline/ATTACK 1.png"
+dest_files=["res://.godot/imported/ATTACK 1.png-ba7c5eded433095c124a46a49bd47d05.ctex"]
 
 [params]
 
