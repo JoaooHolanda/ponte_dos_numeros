@@ -102,28 +102,29 @@ func tratar_escolha():
 
 
 func gerar_equacao():
-	var a = randi() % 50
-	var b = randi() % 50
-	var operacao = randi() % 2
+	# 1. Sorteia o divisor (quem divide). 
+	# Coloquei de 2 a 10 (evita dividir por 0 e dividir por 1 que é muito fácil)
+	var b = randi() % 9 + 2 
 
-	if operacao == 0:
-		resposta_certa = a + b
-		label_conta.text = "%d + %d = ?" % [a, b]
-	else:
-		if a < b:
-			var t = a
-			a = b
-			b = t
-		resposta_certa = a - b
-		label_conta.text = "%d - %d = ?" % [a, b]
+	# 2. Sorteia qual deve ser a resposta certa (tabuada simples)
+	var resultado_esperado = randi() % 10 + 1
+
+	# 3. Calcula o 'a' multiplicando. Assim a divisão será sempre perfeita.
+	var a = b * resultado_esperado
+	
+	# Define a resposta certa
+	resposta_certa = resultado_esperado
+	
+	# Mostra na tela (usando o símbolo de divisão bonitinho)
+	label_conta.text = "%d ÷ %d = ?" % [a, b]
 
 	# gerando valor errado
 	var errada = resposta_certa
 	while errada == resposta_certa:
 		errada += (randi() % 5 + 1) * (1 if randi() % 2 == 0 else -1)
+	
 
 	var valores = [resposta_certa, errada]
-	valores.shuffle()
 
 	label_opcao1.text = str(valores[0])
 	label_opcao2.text = str(valores[1])

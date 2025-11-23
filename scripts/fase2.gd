@@ -102,20 +102,14 @@ func tratar_escolha():
 
 
 func gerar_equacao():
-	var a = randi() % 50
-	var b = randi() % 50
-	var operacao = randi() % 2
+	var a = randi() % 10
+	var b = randi() % 10
+	
 
-	if operacao == 0:
-		resposta_certa = a + b
-		label_conta.text = "%d + %d = ?" % [a, b]
-	else:
-		if a < b:
-			var t = a
-			a = b
-			b = t
-		resposta_certa = a - b
-		label_conta.text = "%d - %d = ?" % [a, b]
+
+	resposta_certa = a * b
+	label_conta.text = "%d * %d = ?" % [a, b]
+	
 
 	# gerando valor errado
 	var errada = resposta_certa
