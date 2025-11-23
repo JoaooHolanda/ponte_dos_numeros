@@ -33,14 +33,6 @@ layout_mode = 2
 layout_mode = 2
 text = "Jogar"
 
-[node name="buttonConfigurar" type="Button" parent="CenterContainer/boxButtons"]
-layout_mode = 2
-text = "Configurar"
-
-[node name="buttonCreditos" type="Button" parent="CenterContainer/boxButtons"]
-layout_mode = 2
-text = "Créditos"
-
 [node name="buttonSair" type="Button" parent="CenterContainer/boxButtons"]
 layout_mode = 2
 text = "Sair"
@@ -61,6 +53,4 @@ stream = ExtResource("3_72bpb")
 volume_db = -2.039
 
 [connection signal="pressed" from="CenterContainer/boxButtons/buttonJogar" to="." method="_on_button_jogar_pressed"]
-[connection signal="pressed" from="CenterContainer/boxButtons/buttonConfigurar" to="." method="_on_button_configurar_pressed"]
-[connection signal="pressed" from="CenterContainer/boxButtons/buttonCreditos" to="." method="_on_button_creditos_pressed"]
 [connection signal="pressed" from="CenterContainer/boxButtons/buttonSair" to="." method="_on_button_sair_pressed"]

@@ -114,6 +114,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="vidas" type="Label" parent="centralLabels"]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
@@ -123,7 +124,7 @@ position = Vector2(210, 883)
 script = ExtResource("8_65ygv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="queda"]
-position = Vector2(406.5, -102)
+position = Vector2(368, -102)
 shape = SubResource("RectangleShape2D_e3ho8")
 
 [connection signal="body_entered" from="opcao1_1" to="opcao1_1" method="_on_body_entered"]

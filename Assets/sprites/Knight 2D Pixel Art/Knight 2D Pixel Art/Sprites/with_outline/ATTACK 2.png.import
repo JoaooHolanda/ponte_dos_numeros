@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j1dkag08escd"
-path="res://.godot/imported/fase_3_fundo.png-6c603668428eb4a6127865eabb80d6bf.ctex"
+uid="uid://b7y27ava724e5"
+path="res://.godot/imported/ATTACK 2.png-726536abeecb8cf3900af8b5796645fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/img/fase_3_fundo.png"
-dest_files=["res://.godot/imported/fase_3_fundo.png-6c603668428eb4a6127865eabb80d6bf.ctex"]
+source_file="res://Assets/Sprites/Knight 2D Pixel Art/Knight 2D Pixel Art/Sprites/with_outline/ATTACK 2.png"
+dest_files=["res://.godot/imported/ATTACK 2.png-726536abeecb8cf3900af8b5796645fc.ctex"]
 
 [params]
 

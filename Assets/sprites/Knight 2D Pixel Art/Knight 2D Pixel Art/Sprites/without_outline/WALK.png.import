@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j1dkag08escd"
-path="res://.godot/imported/fase_3_fundo.png-6c603668428eb4a6127865eabb80d6bf.ctex"
+uid="uid://xi0doedlj6pd"
+path="res://.godot/imported/WALK.png-b9c0eed71c9bc005a8ceb7d3e1c99569.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/img/fase_3_fundo.png"
-dest_files=["res://.godot/imported/fase_3_fundo.png-6c603668428eb4a6127865eabb80d6bf.ctex"]
+source_file="res://Assets/Sprites/Knight 2D Pixel Art/Knight 2D Pixel Art/Sprites/without_outline/WALK.png"
+dest_files=["res://.godot/imported/WALK.png-b9c0eed71c9bc005a8ceb7d3e1c99569.ctex"]
 
 [params]
 

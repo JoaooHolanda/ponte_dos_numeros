@@ -84,7 +84,8 @@ func tratar_escolha():
 
 	if valor == resposta_certa:
 		som_acerto.play()
-		get_tree().change_scene_to_file("res://Cenas/fase_2.tscn")
+		get_tree().change_scene_to_file("res://Cenas/end.tscn")
+		
 	else:
 		som_erro.play()
 		vidas -= 1
@@ -93,10 +94,9 @@ func tratar_escolha():
 		# ERRO → desativar colisão do player
 		jogador.set_collision_layer(0)
 		jogador.set_collision_mask(0)
-		
 		await get_tree().create_timer(1.0).timeout
 		get_tree().change_scene_to_file("res://Cenas/fase_1.tscn")
-
+		
 
 	parar_piscar()
 

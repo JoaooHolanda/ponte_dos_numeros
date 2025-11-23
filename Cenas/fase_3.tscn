@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bmatdeo4obw8y"]
 
-[ext_resource type="Script" uid="uid://b2rk0ghstqh2p" path="res://scripts/fase1.gd" id="1_mtfx8"]
+[ext_resource type="Script" uid="uid://epfgkb27hns2" path="res://scripts/fase3.gd" id="1_qt4wc"]
 [ext_resource type="Texture2D" uid="uid://j1dkag08escd" path="res://Assets/img/fase_3_fundo.png" id="2_mtfx8"]
 [ext_resource type="Texture2D" uid="uid://dtrfmsg2klkou" path="res://Assets/img/tileset.png" id="4_pgpv6"]
 [ext_resource type="PackedScene" uid="uid://dhtujwolyp3nj" path="res://Cenas/jogador.tscn" id="4_qt4wc"]
@@ -46,7 +46,9 @@ texture = ExtResource("4_pgpv6")
 3:4/0 = 0
 4:4/0 = 0
 6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.4749146, 8, 3.956892, 4.856186, 8, 5.3957634, 8, 8)
 7:4/0 = 0
+7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -0.71943474, 5.5756207, 4.856186, 5.5756207, 8, 8)
 12:4/0 = 0
 13:4/0 = 0
 14:4/0 = 0
@@ -77,10 +79,15 @@ texture = ExtResource("4_pgpv6")
 13:6/0 = 0
 0:7/0 = 0
 2:7/0 = 0
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 6.6547737, 8, 8, 8, -8)
 3:7/0 = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:7/0 = 0
+4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:7/0 = 0
+5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:7/0 = 0
+6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:7/0 = 0
 8:7/0 = 0
 9:7/0 = 0
@@ -88,6 +95,7 @@ texture = ExtResource("4_pgpv6")
 11:7/0 = 0
 12:7/0 = 0
 13:7/0 = 0
+13:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:8/0 = 0
 2:8/0 = 0
 3:8/0 = 0
@@ -130,13 +138,14 @@ texture = ExtResource("4_pgpv6")
 0:11/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_qt4wc"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_8tjhp")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cdxkg"]
 size = Vector2(1153, 224)
 
 [node name="Fase3" type="Node2D"]
-script = ExtResource("1_mtfx8")
+script = ExtResource("1_qt4wc")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 offset_left = -5.0
@@ -220,6 +229,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="vidas" type="Label" parent="centralLabels"]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
