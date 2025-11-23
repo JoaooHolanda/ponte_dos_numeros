@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtvd30gjcu8sr"]
+
+[ext_resource type="Script" uid="uid://b2rk0ghstqh2p" path="res://scripts/fase1.gd" id="1_hqyny"]
+[ext_resource type="Texture2D" uid="uid://b33y8qn1r6kyt" path="res://Assets/img/fundoMenu1.png" id="2_12m1u"]
+[ext_resource type="TileSet" uid="uid://d3e3by3jvb2d8" path="res://Assets/tileSets/atlasnoback.tres" id="3_00j4k"]
+[ext_resource type="PackedScene" uid="uid://dhtujwolyp3nj" path="res://Cenas/jogador.tscn" id="4_00j4k"]
+
+[node name="Fase1" type="Node2D"]
+script = ExtResource("1_hqyny")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -4.0
+offset_top = -216.0
+offset_right = 1152.0
+offset_bottom = 808.0
+texture = ExtResource("2_12m1u")
+expand_mode = 1
+
+[node name="jogador" parent="." instance=ExtResource("4_00j4k")]
+position = Vector2(385, 515)
+
+[node name="Camera2D2" type="Camera2D" parent="jogador"]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(5, 0)
+tile_set = ExtResource("3_00j4k")
+format = 2
+layer_0/tile_data = PackedInt32Array(2424835, 1572864, 29, 2424843, 1572864, 29, 2424851, 1572864, 29, 2293790, 2752512, 48, 2359334, 2293760, 38, 2359349, 1572864, 29, 2359358, 1572864, 29, 2228293, 2293760, 38, 1507396, 1638400, 1)
+
+[node name="musicaAmbiente" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(104, 556)
+
+[node name="somDeAcerto" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(104, 545)
+
+[node name="somDeErro" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(72, 517)
+
+[node name="centralLabels" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="conta" type="Label" parent="centralLabels"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.355
+anchor_bottom = 0.415
+offset_left = 723.0
+offset_top = 280.0
+offset_right = 776.0
+offset_bottom = 303.0
+scale = Vector2(3, 3)
+text = "20 + 5?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="opcao1" type="Label" parent="centralLabels"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.355
+anchor_bottom = 0.415
+offset_left = 598.0
+offset_top = 549.0
+offset_right = 617.0
+offset_bottom = 572.0
+scale = Vector2(3, 3)
+text = "27"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="opcao2" type="Label" parent="centralLabels"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.355
+anchor_bottom = 0.415
+offset_left = 461.0
+offset_top = 535.0
+offset_right = 480.0
+offset_bottom = 558.0
+scale = Vector2(3, 3)
+text = "25"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="vidas" type="Label" parent="centralLabels"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

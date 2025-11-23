@@ -1,0 +1,139 @@
+[gd_scene load_steps=14 format=3 uid="uid://dtvd30gjcu8sr"]
+
+[ext_resource type="Script" uid="uid://b2rk0ghstqh2p" path="res://scripts/fase1.gd" id="1_hqyny"]
+[ext_resource type="Texture2D" uid="uid://b33y8qn1r6kyt" path="res://Assets/img/fundoMenu1.png" id="2_12m1u"]
+[ext_resource type="TileSet" uid="uid://d3e3by3jvb2d8" path="res://Assets/tileSets/atlasnoback.tres" id="3_00j4k"]
+[ext_resource type="PackedScene" uid="uid://dhtujwolyp3nj" path="res://Cenas/jogador.tscn" id="4_00j4k"]
+[ext_resource type="AudioStream" uid="uid://ma6765oscgs4" path="res://Assets/musics/the_price_is_right_ding.mp3" id="5_65ygv"]
+[ext_resource type="AudioStream" uid="uid://dnpe3ltdqe51f" path="res://Assets/musics/Lord of the Rings Sound of The Shire [LML6SoNE7xE].mp3" id="5_e3ho8"]
+[ext_resource type="Script" uid="uid://ces00s8lvr5ds" path="res://scripts/colisaoopcao.gd" id="5_vwldl"]
+[ext_resource type="Script" uid="uid://ffp3qchjmej2" path="res://Cenas/colisaoopcao2.gd" id="6_ahbfq"]
+[ext_resource type="AudioStream" uid="uid://buam2fhyk8321" path="res://Assets/musics/error_CDOxCYm.mp3" id="6_e3ho8"]
+[ext_resource type="Script" uid="uid://btjpc35w12c1r" path="res://Cenas/queda.gd" id="8_65ygv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00j4k"]
+size = Vector2(72, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfyrq"]
+size = Vector2(63, 143.417)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3ho8"]
+size = Vector2(1153, 224)
+
+[node name="Fase1" type="Node2D"]
+script = ExtResource("1_hqyny")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -4.0
+offset_top = -216.0
+offset_right = 1152.0
+offset_bottom = 808.0
+texture = ExtResource("2_12m1u")
+expand_mode = 1
+
+[node name="jogador" parent="." instance=ExtResource("4_00j4k")]
+position = Vector2(227, 478)
+
+[node name="Camera2D2" type="Camera2D" parent="jogador"]
+position = Vector2(-1, -1)
+enabled = false
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(5, 0)
+tile_set = ExtResource("3_00j4k")
+format = 2
+layer_0/tile_data = PackedInt32Array(2424835, 1572864, 29, 2424843, 1572864, 29, 2424851, 1572864, 29, 2293790, 2752512, 48, 2359334, 2293760, 38, 2359349, 1572864, 29, 2359358, 1572864, 29, 2228293, 2293760, 38, 1507396, 1638400, 1)
+
+[node name="musicaAmbiente" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(104, 556)
+stream = ExtResource("5_e3ho8")
+autoplay = true
+
+[node name="somDeAcerto" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(104, 545)
+stream = ExtResource("5_65ygv")
+
+[node name="somDeErro" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(72, 517)
+stream = ExtResource("6_e3ho8")
+
+[node name="opcao1_1" type="Area2D" parent="."]
+position = Vector2(488, 556)
+script = ExtResource("5_vwldl")
+
+[node name="opcao1" type="Label" parent="opcao1_1"]
+anchors_preset = -1
+anchor_right = 0.355
+anchor_bottom = 0.415
+offset_left = -29.0
+offset_top = -17.0
+offset_right = -10.0
+offset_bottom = 6.00002
+scale = Vector2(3, 3)
+text = "25"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="colisaoopcao1" type="CollisionShape2D" parent="opcao1_1"]
+position = Vector2(1, 6)
+shape = SubResource("RectangleShape2D_00j4k")
+
+[node name="opcao2_2" type="Area2D" parent="."]
+position = Vector2(602, 566)
+script = ExtResource("6_ahbfq")
+
+[node name="opcao2" type="Label" parent="opcao2_2"]
+anchors_preset = -1
+anchor_right = 0.355
+anchor_bottom = 0.415
+offset_left = -9.33333
+offset_top = -12.3333
+offset_right = 9.66667
+offset_bottom = 10.6667
+scale = Vector2(3, 3)
+text = "27"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="colisaoopcao2" type="CollisionShape2D" parent="opcao2_2"]
+position = Vector2(19, 3.70831)
+shape = SubResource("RectangleShape2D_nfyrq")
+
+[node name="centralLabels" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="conta" type="Label" parent="centralLabels"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.355
+anchor_bottom = 0.415
+offset_left = 723.0
+offset_top = 280.0
+offset_right = 776.0
+offset_bottom = 303.0
+scale = Vector2(3, 3)
+text = "20 + 5?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="vidas" type="Label" parent="centralLabels"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="queda" type="Area2D" parent="."]
+position = Vector2(210, 883)
+script = ExtResource("8_65ygv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="queda"]
+position = Vector2(368, -102)
+shape = SubResource("RectangleShape2D_e3ho8")
+
+[connection signal="body_entered" from="opcao1_1" to="opcao1_1" method="_on_body_entered"]
+[connection signal="body_entered" from="opcao2_2" to="opcao2_2" method="_on_body_entered"]
+[connection signal="body_entered" from="queda" to="queda" method="_on_body_entered"]

@@ -1,0 +1,422 @@
+[gd_scene load_steps=16 format=3 uid="uid://db0x5gtfwpfq5"]
+
+[ext_resource type="Script" uid="uid://dqltjx7kc7r7u" path="res://scripts/fase2.gd" id="1_0v05o"]
+[ext_resource type="Texture2D" uid="uid://crg3r2ut02g5r" path="res://Assets/img/fundoimagem1.png" id="2_c1qc7"]
+[ext_resource type="PackedScene" uid="uid://dhtujwolyp3nj" path="res://Cenas/jogador.tscn" id="4_0v05o"]
+[ext_resource type="Texture2D" uid="uid://djfcyqdvgxr3s" path="res://Assets/img/purplecity.png" id="4_41ryc"]
+[ext_resource type="AudioStream" uid="uid://bygw1ikn016nk" path="res://Assets/musics/Prologue_ One Ring to Rule Them All.mp3" id="4_f7siq"]
+[ext_resource type="Script" uid="uid://ces00s8lvr5ds" path="res://scripts/colisaoopcao.gd" id="4_jf64f"]
+[ext_resource type="AudioStream" uid="uid://ma6765oscgs4" path="res://Assets/musics/the_price_is_right_ding.mp3" id="4_mvsrr"]
+[ext_resource type="Script" uid="uid://ffp3qchjmej2" path="res://Cenas/colisaoopcao2.gd" id="5_0v05o"]
+[ext_resource type="AudioStream" uid="uid://buam2fhyk8321" path="res://Assets/musics/error_CDOxCYm.mp3" id="5_f7siq"]
+[ext_resource type="Script" uid="uid://btjpc35w12c1r" path="res://Cenas/queda.gd" id="6_ev8p6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jf64f"]
+texture = ExtResource("4_41ryc")
+texture_region_size = Vector2i(10, 12)
+45:18/0 = 0
+46:18/0 = 0
+47:18/0 = 0
+48:18/0 = 0
+16:19/0 = 0
+17:19/0 = 0
+18:19/0 = 0
+19:19/0 = 0
+20:19/0 = 0
+21:19/0 = 0
+22:19/0 = 0
+40:19/0 = 0
+41:19/0 = 0
+42:19/0 = 0
+43:19/0 = 0
+44:19/0 = 0
+45:19/0 = 0
+46:19/0 = 0
+47:19/0 = 0
+48:19/0 = 0
+4:20/0 = 0
+5:20/0 = 0
+6:20/0 = 0
+7:20/0 = 0
+11:20/0 = 0
+12:20/0 = 0
+13:20/0 = 0
+14:20/0 = 0
+15:20/0 = 0
+16:20/0 = 0
+17:20/0 = 0
+18:20/0 = 0
+19:20/0 = 0
+20:20/0 = 0
+21:20/0 = 0
+22:20/0 = 0
+31:20/0 = 0
+32:20/0 = 0
+33:20/0 = 0
+34:20/0 = 0
+35:20/0 = 0
+36:20/0 = 0
+37:20/0 = 0
+38:20/0 = 0
+40:20/0 = 0
+41:20/0 = 0
+42:20/0 = 0
+43:20/0 = 0
+44:20/0 = 0
+45:20/0 = 0
+46:20/0 = 0
+47:20/0 = 0
+48:20/0 = 0
+2:21/0 = 0
+3:21/0 = 0
+4:21/0 = 0
+5:21/0 = 0
+6:21/0 = 0
+7:21/0 = 0
+8:21/0 = 0
+9:21/0 = 0
+10:21/0 = 0
+11:21/0 = 0
+12:21/0 = 0
+13:21/0 = 0
+14:21/0 = 0
+15:21/0 = 0
+16:21/0 = 0
+17:21/0 = 0
+18:21/0 = 0
+19:21/0 = 0
+20:21/0 = 0
+21:21/0 = 0
+22:21/0 = 0
+23:21/0 = 0
+24:21/0 = 0
+25:21/0 = 0
+26:21/0 = 0
+27:21/0 = 0
+28:21/0 = 0
+29:21/0 = 0
+31:21/0 = 0
+32:21/0 = 0
+33:21/0 = 0
+34:21/0 = 0
+35:21/0 = 0
+36:21/0 = 0
+37:21/0 = 0
+38:21/0 = 0
+40:21/0 = 0
+41:21/0 = 0
+42:21/0 = 0
+43:21/0 = 0
+44:21/0 = 0
+45:21/0 = 0
+46:21/0 = 0
+47:21/0 = 0
+48:21/0 = 0
+2:22/0 = 0
+3:22/0 = 0
+4:22/0 = 0
+5:22/0 = 0
+6:22/0 = 0
+7:22/0 = 0
+8:22/0 = 0
+9:22/0 = 0
+10:22/0 = 0
+11:22/0 = 0
+12:22/0 = 0
+13:22/0 = 0
+14:22/0 = 0
+15:22/0 = 0
+16:22/0 = 0
+17:22/0 = 0
+18:22/0 = 0
+19:22/0 = 0
+20:22/0 = 0
+21:22/0 = 0
+23:22/0 = 0
+24:22/0 = 0
+25:22/0 = 0
+26:22/0 = 0
+27:22/0 = 0
+28:22/0 = 0
+29:22/0 = 0
+31:22/0 = 0
+32:22/0 = 0
+33:22/0 = 0
+34:22/0 = 0
+35:22/0 = 0
+36:22/0 = 0
+37:22/0 = 0
+38:22/0 = 0
+40:22/0 = 0
+41:22/0 = 0
+42:22/0 = 0
+43:22/0 = 0
+44:22/0 = 0
+45:22/0 = 0
+46:22/0 = 0
+47:22/0 = 0
+48:22/0 = 0
+2:28/0 = 0
+3:28/0 = 0
+4:28/0 = 0
+5:28/0 = 0
+6:28/0 = 0
+7:28/0 = 0
+8:28/0 = 0
+9:28/0 = 0
+2:29/0 = 0
+3:29/0 = 0
+4:29/0 = 0
+5:29/0 = 0
+6:29/0 = 0
+7:29/0 = 0
+8:29/0 = 0
+9:29/0 = 0
+2:30/0 = 0
+3:30/0 = 0
+4:30/0 = 0
+5:30/0 = 0
+6:30/0 = 0
+7:30/0 = 0
+8:30/0 = 0
+20:30/0 = 0
+21:30/0 = 0
+23:30/0 = 0
+24:30/0 = 0
+25:30/0 = 0
+2:31/0 = 0
+3:31/0 = 0
+4:31/0 = 0
+5:31/0 = 0
+6:31/0 = 0
+7:31/0 = 0
+8:31/0 = 0
+20:31/0 = 0
+22:31/0 = 0
+23:31/0 = 0
+24:31/0 = 0
+25:31/0 = 0
+36:31/0 = 0
+37:31/0 = 0
+39:31/0 = 0
+40:31/0 = 0
+41:31/0 = 0
+42:31/0 = 0
+43:31/0 = 0
+2:32/0 = 0
+3:32/0 = 0
+4:32/0 = 0
+5:32/0 = 0
+6:32/0 = 0
+7:32/0 = 0
+8:32/0 = 0
+9:32/0 = 0
+10:32/0 = 0
+11:32/0 = 0
+12:32/0 = 0
+13:32/0 = 0
+14:32/0 = 0
+15:32/0 = 0
+16:32/0 = 0
+17:32/0 = 0
+18:32/0 = 0
+19:32/0 = 0
+20:32/0 = 0
+22:32/0 = 0
+23:32/0 = 0
+24:32/0 = 0
+25:32/0 = 0
+26:32/0 = 0
+28:32/0 = 0
+29:32/0 = 0
+30:32/0 = 0
+31:32/0 = 0
+32:32/0 = 0
+33:32/0 = 0
+34:32/0 = 0
+35:32/0 = 0
+36:32/0 = 0
+37:32/0 = 0
+38:32/0 = 0
+39:32/0 = 0
+40:32/0 = 0
+41:32/0 = 0
+42:32/0 = 0
+43:32/0 = 0
+2:33/0 = 0
+3:33/0 = 0
+4:33/0 = 0
+5:33/0 = 0
+6:33/0 = 0
+7:33/0 = 0
+8:33/0 = 0
+9:33/0 = 0
+10:33/0 = 0
+11:33/0 = 0
+12:33/0 = 0
+13:33/0 = 0
+14:33/0 = 0
+15:33/0 = 0
+16:33/0 = 0
+17:33/0 = 0
+18:33/0 = 0
+19:33/0 = 0
+20:33/0 = 0
+22:33/0 = 0
+23:33/0 = 0
+24:33/0 = 0
+25:33/0 = 0
+26:33/0 = 0
+28:33/0 = 0
+30:33/0 = 0
+31:33/0 = 0
+33:33/0 = 0
+34:33/0 = 0
+36:33/0 = 0
+38:33/0 = 0
+39:33/0 = 0
+40:33/0 = 0
+41:33/0 = 0
+42:33/0 = 0
+43:33/0 = 0
+11:34/0 = 0
+12:34/0 = 0
+49:38/0 = 0
+9:41/size_in_atlas = Vector2i(5, 1)
+9:41/0 = 0
+9:41/0/physics_layer_0/polygon_0/points = PackedVector2Array(-23.260044, 3.50494, -23.260044, -3.8235683, 23.578678, -4.4608307, 22.941414, 1.2745247, 22.941414, 4.779461)
+5:42/0 = 0
+3:41/size_in_atlas = Vector2i(6, 1)
+3:41/0 = 0
+3:41/0/physics_layer_0/polygon_0/points = PackedVector2Array(-22.941414, -3.186308, -25.49046, -1.593153, -26.446352, 1.9117851, -26.12772, 4.779461, -15.931536, 4.779461, 18.480583, 5.098091, 21.985523, 5.4167213, 21.666893, -0.63726044, 20.710999, -3.8235683, 14.657017, -4.779461, -21.66689, -5.4167233)
+19:43/size_in_atlas = Vector2i(3, 2)
+19:43/next_alternative_id = 2
+19:43/0 = 0
+19:43/0/physics_layer_0/polygon_0/points = PackedVector2Array(-13.849123, -5.935337, -13.849123, 0.5395775, 8, 0.35971832, 8, -5.755479)
+19:43/1 = 1
+11:29/0 = 0
+13:28/size_in_atlas = Vector2i(4, 2)
+13:28/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_0v05o"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_jf64f")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvsrr"]
+size = Vector2(84, 108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f7siq"]
+size = Vector2(65, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7qfa"]
+size = Vector2(1153, 224)
+
+[node name="Fase2" type="Node2D"]
+script = ExtResource("1_0v05o")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_top = -128.0
+offset_right = 1156.0
+offset_bottom = 896.0
+texture = ExtResource("2_c1qc7")
+expand_mode = 1
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(0, 1)
+tile_set = SubResource("TileSet_0v05o")
+format = 2
+layer_0/tile_data = PackedInt32Array(2228225, 196608, 41, 2228226, 196608, 41, 2228227, 196608, 41, 2228228, 196608, 41, 2228229, 196608, 41, 2228230, 196608, 41, 2228231, 196608, 41, 2228232, 196608, 41, 2228233, 196608, 41, 2228234, 196608, 41, 2228235, 196608, 41, 2228236, 196608, 41, 2228237, 196608, 41, 2228238, 196608, 41, 2228239, 196608, 41, 2228240, 196608, 41, 2228241, 196608, 41, 2228242, 196608, 41, 2228243, 196608, 41, 2228244, 196608, 41, 2228245, 196608, 41, 2228246, 196608, 41, 2228247, 196608, 41, 2228248, 196608, 41, 2228249, 196608, 41, 2228268, 196608, 41, 2228269, 196608, 41, 2228270, 196608, 41, 2228271, 196608, 41, 2228272, 196608, 41, 2228273, 196608, 41, 2228274, 196608, 41, 2228275, 196608, 41, 2228276, 196608, 41, 2228277, 196608, 41, 2228278, 196608, 41, 2228279, 196608, 41, 2228280, 196608, 41, 2228281, 196608, 41, 2228282, 196608, 41, 2228283, 196608, 41, 2228284, 196608, 41, 2228285, 196608, 41, 2228287, 589824, 41, 2228288, 589824, 41, 2162752, 589824, 41, 2228262, 1245184, 43, 2228261, 1245184, 43, 2228253, 1245184, 43, 2228254, 1245184, 43)
+
+[node name="musicaAmbiente" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(104, 556)
+stream = ExtResource("4_f7siq")
+autoplay = true
+
+[node name="somDeAcerto" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(104, 545)
+stream = ExtResource("4_mvsrr")
+
+[node name="somDeErro" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(72, 517)
+stream = ExtResource("5_f7siq")
+
+[node name="jogador" parent="." instance=ExtResource("4_0v05o")]
+position = Vector2(385, 515)
+
+[node name="centralLabels" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="conta" type="Label" parent="centralLabels"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.355
+anchor_bottom = 0.415
+offset_left = 749.0
+offset_top = 365.0
+offset_right = 802.0
+offset_bottom = 388.0
+scale = Vector2(3, 3)
+text = "20 + 5?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="vidas" type="Label" parent="centralLabels"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="opcao1_1" type="Area2D" parent="."]
+script = ExtResource("4_jf64f")
+
+[node name="opcao1" type="Label" parent="opcao1_1"]
+anchors_preset = -1
+anchor_right = 0.355
+anchor_bottom = 0.415
+offset_left = 454.0
+offset_top = 542.0
+offset_right = 473.0
+offset_bottom = 565.0
+scale = Vector2(3, 3)
+text = "25"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="colisaoopcao1" type="CollisionShape2D" parent="opcao1_1"]
+position = Vector2(481, 572)
+shape = SubResource("RectangleShape2D_mvsrr")
+
+[node name="opcao2_2" type="Area2D" parent="."]
+script = ExtResource("5_0v05o")
+
+[node name="opcao2" type="Label" parent="opcao2_2"]
+anchors_preset = -1
+anchor_right = 0.355
+anchor_bottom = 0.415
+offset_left = 581.0
+offset_top = 539.0
+offset_right = 600.0
+offset_bottom = 562.0
+scale = Vector2(3, 3)
+text = "27"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="colisaoopcao2" type="CollisionShape2D" parent="opcao2_2"]
+position = Vector2(610.5, 580)
+shape = SubResource("RectangleShape2D_f7siq")
+
+[node name="queda" type="Area2D" parent="."]
+position = Vector2(169, 883)
+script = ExtResource("6_ev8p6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="queda"]
+position = Vector2(406.5, -102)
+shape = SubResource("RectangleShape2D_o7qfa")
+
+[connection signal="body_entered" from="opcao1_1" to="opcao1_1" method="_on_body_entered"]
+[connection signal="body_entered" from="opcao2_2" to="opcao2_2" method="_on_body_entered"]
+[connection signal="body_entered" from="queda" to="queda" method="_on_body_entered"]

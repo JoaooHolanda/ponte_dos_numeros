@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://bn1v1ao8mpqql"]
+
+[ext_resource type="Script" uid="uid://duxouuy1uv23y" path="res://scripts/end.gd" id="1_skube"]
+[ext_resource type="Texture2D" uid="uid://j1dkag08escd" path="res://Assets/img/fase_3_fundo.png" id="1_sxdpm"]
+[ext_resource type="AudioStream" uid="uid://cats8ir1jsq40" path="res://Assets/musics/The Road Goes Ever On... , Pt. 2  In Dreams (feat. Edward Ross).mp3" id="3_dxg7t"]
+
+[node name="end" type="Node2D"]
+script = ExtResource("1_skube")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -2.0
+offset_top = -410.0
+offset_right = 1148.0
+offset_bottom = 719.0
+texture = ExtResource("1_sxdpm")
+
+[node name="END" type="Label" parent="."]
+offset_left = 4.0
+offset_top = 10.0
+offset_right = 1154.0
+offset_bottom = 648.0
+theme_override_font_sizes/font_size = 38
+text = "PARABENS VOCE GANHOU"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 427.0
+offset_top = 382.0
+offset_right = 709.0
+offset_bottom = 449.0
+text = "VOLTAR PARA INICIO"
+
+[node name="musicaAmbiente" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(104, 556)
+stream = ExtResource("3_dxg7t")
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

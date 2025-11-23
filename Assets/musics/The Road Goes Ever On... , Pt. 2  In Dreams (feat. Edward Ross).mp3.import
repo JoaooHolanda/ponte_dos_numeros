@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cats8ir1jsq40"
+path="res://.godot/imported/The Road Goes Ever On... , Pt. 2  In Dreams (feat. Edward Ross).mp3-14cafd44d68b715d78d78047229b7a2c.mp3str"
+
+[deps]
+
+source_file="res://Assets/musics/The Road Goes Ever On... , Pt. 2  In Dreams (feat. Edward Ross).mp3"
+dest_files=["res://.godot/imported/The Road Goes Ever On... , Pt. 2  In Dreams (feat. Edward Ross).mp3-14cafd44d68b715d78d78047229b7a2c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
