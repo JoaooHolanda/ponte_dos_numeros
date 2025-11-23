@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpfur8sey0n15"
-path="res://.godot/imported/JUMP.png-86bb55ad077fda7ddc2fe614476273ec.ctex"
+path="res://.godot/imported/JUMP.png-313a4b3d2a44a7ff5db024939b09a1b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/Knight 2D Pixel Art/Knight 2D Pixel Art/Sprites/without_outline/JUMP.png"
-dest_files=["res://.godot/imported/JUMP.png-86bb55ad077fda7ddc2fe614476273ec.ctex"]
+source_file="res://Assets/Sprites/Knight 2D Pixel Art/Knight 2D Pixel Art/Sprites/without_outline/JUMP.png"
+dest_files=["res://.godot/imported/JUMP.png-313a4b3d2a44a7ff5db024939b09a1b9.ctex"]
 
 [params]
 

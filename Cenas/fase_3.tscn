@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://bmatdeo4obw8y"]
+[gd_scene load_steps=16 format=3 uid="uid://bmatdeo4obw8y"]
 
 [ext_resource type="Script" uid="uid://epfgkb27hns2" path="res://scripts/fase3.gd" id="1_qt4wc"]
 [ext_resource type="Texture2D" uid="uid://j1dkag08escd" path="res://Assets/img/fase_3_fundo.png" id="2_mtfx8"]
+[ext_resource type="AudioStream" uid="uid://smdstcysrv0l" path="res://Assets/musics/Moria.mp3" id="3_cdxkg"]
 [ext_resource type="AudioStream" uid="uid://ma6765oscgs4" path="res://Assets/musics/the_price_is_right_ding.mp3" id="3_rk7hk"]
 [ext_resource type="AudioStream" uid="uid://buam2fhyk8321" path="res://Assets/musics/error_CDOxCYm.mp3" id="4_cdxkg"]
 [ext_resource type="Texture2D" uid="uid://dtrfmsg2klkou" path="res://Assets/img/tileset.png" id="4_pgpv6"]
@@ -165,6 +166,8 @@ expand_mode = 1
 
 [node name="musicaAmbiente" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(104, 556)
+stream = ExtResource("3_cdxkg")
+autoplay = true
 
 [node name="somDeAcerto" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(104, 545)

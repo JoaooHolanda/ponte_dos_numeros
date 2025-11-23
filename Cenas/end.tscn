@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bn1v1ao8mpqql"]
+[gd_scene load_steps=4 format=3 uid="uid://bn1v1ao8mpqql"]
 
 [ext_resource type="Script" uid="uid://duxouuy1uv23y" path="res://scripts/end.gd" id="1_skube"]
 [ext_resource type="Texture2D" uid="uid://j1dkag08escd" path="res://Assets/img/fase_3_fundo.png" id="1_sxdpm"]
+[ext_resource type="AudioStream" uid="uid://cats8ir1jsq40" path="res://Assets/musics/The Road Goes Ever On... , Pt. 2  In Dreams (feat. Edward Ross).mp3" id="3_dxg7t"]
 
 [node name="end" type="Node2D"]
 script = ExtResource("1_skube")
@@ -29,5 +30,10 @@ offset_top = 382.0
 offset_right = 709.0
 offset_bottom = 449.0
 text = "VOLTAR PARA INICIO"
+
+[node name="musicaAmbiente" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(104, 556)
+stream = ExtResource("3_dxg7t")
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

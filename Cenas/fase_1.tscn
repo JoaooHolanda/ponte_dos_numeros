@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dtvd30gjcu8sr"]
+[gd_scene load_steps=14 format=3 uid="uid://dtvd30gjcu8sr"]
 
 [ext_resource type="Script" uid="uid://b2rk0ghstqh2p" path="res://scripts/fase1.gd" id="1_hqyny"]
 [ext_resource type="Texture2D" uid="uid://b33y8qn1r6kyt" path="res://Assets/img/fundoMenu1.png" id="2_12m1u"]
 [ext_resource type="TileSet" uid="uid://d3e3by3jvb2d8" path="res://Assets/tileSets/atlasnoback.tres" id="3_00j4k"]
 [ext_resource type="PackedScene" uid="uid://dhtujwolyp3nj" path="res://Cenas/jogador.tscn" id="4_00j4k"]
 [ext_resource type="AudioStream" uid="uid://ma6765oscgs4" path="res://Assets/musics/the_price_is_right_ding.mp3" id="5_65ygv"]
+[ext_resource type="AudioStream" uid="uid://dnpe3ltdqe51f" path="res://Assets/musics/Lord of the Rings Sound of The Shire [LML6SoNE7xE].mp3" id="5_e3ho8"]
 [ext_resource type="Script" uid="uid://ces00s8lvr5ds" path="res://scripts/colisaoopcao.gd" id="5_vwldl"]
 [ext_resource type="Script" uid="uid://ffp3qchjmej2" path="res://Cenas/colisaoopcao2.gd" id="6_ahbfq"]
 [ext_resource type="AudioStream" uid="uid://buam2fhyk8321" path="res://Assets/musics/error_CDOxCYm.mp3" id="6_e3ho8"]
@@ -45,6 +46,8 @@ layer_0/tile_data = PackedInt32Array(2424835, 1572864, 29, 2424843, 1572864, 29,
 
 [node name="musicaAmbiente" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(104, 556)
+stream = ExtResource("5_e3ho8")
+autoplay = true
 
 [node name="somDeAcerto" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(104, 545)
